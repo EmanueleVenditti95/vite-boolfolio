@@ -1,7 +1,13 @@
 <template>
     <div class="card">
         <div class="content">
+            <h3 v-if="project.type" class="type">{{ project.type.name }}</h3>
             <h2>{{ project.title }}</h2>
+            <div class="technologies">
+                <span v-for="technology in project.technologies">
+                    {{ technology.name }} - 
+                </span>
+            </div>
             <p>{{ project.description }}</p> 
         </div>
     </div>
@@ -26,6 +32,12 @@ export default {
         padding: 20px;
         background-color: rgb(205, 202, 202,0.5);
         border-radius: 10px;
+    }
+    .type {
+        color: red;
+    }
+    .technologies {
+        margin: 10px 0;
     }
 }
 </style>
