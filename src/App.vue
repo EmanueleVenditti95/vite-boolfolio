@@ -1,14 +1,14 @@
 <script>
-import ProjectIndex from './views/projects/Index.vue';
+
 export default {
   components: {
-    ProjectIndex
+
   }
 }
 </script>
 
 <template>
-  <ProjectIndex />
+<router-view></router-view>
 </template>
 
 <style lang="scss">

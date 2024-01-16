@@ -5,7 +5,7 @@
             <h2>{{ project.title }}</h2>
             <div class="technologies">
                 <span v-for="technology in project.technologies">
-                    {{ technology.name }} - 
+                    -{{ technology.name }}
                 </span>
             </div>
             <p>{{ project.description }}</p> 
@@ -38,6 +38,7 @@ export default {
     }
     .technologies {
         margin: 10px 0;
+        font-style: italic;
     }
 }
 </style>
