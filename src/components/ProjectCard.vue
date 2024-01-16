@@ -9,6 +9,9 @@
                 </span>
             </div>
             <p>{{ project.description }}</p> 
+            <p>
+                <router-link :to="{ name:'show.project', params: { slug: project.slug }}">Vedi progetto</router-link>
+            </p>
         </div>
     </div>
 </template>
@@ -24,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .card {
     padding: 10px;
     flex-basis: calc(100%/4);
