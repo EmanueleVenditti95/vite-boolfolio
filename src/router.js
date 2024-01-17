@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import ProjectsIndex from './views/projects/ProjectsIndex.vue';
 import Index from './views/Index.vue';
 import ProjectShow from './views/projects/ProjectShow.vue';
+import TypeIndex from './views/projects/types/TypeIndex.vue';
 import NotFound from './views/NotFound.vue';
 
 const router = createRouter({
@@ -24,10 +25,15 @@ const router = createRouter({
             component: ProjectShow
         },
         {
-			path: '/:pathMatch(.*)*',
-			name: 'not-found',
-			component: NotFound,
-		},
+            path: '/types',
+            name: 'types',
+            component: TypeIndex
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound,
+        },
     ]
 });
 
