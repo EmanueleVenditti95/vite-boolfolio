@@ -8,7 +8,6 @@
                     -{{ technology.name }}
                 </span>
             </div>
-            <p>{{ project.description }}</p> 
             <p>
                 <router-link :to="{ name:'show.project', params: { slug: project.slug }}">Vedi progetto</router-link>
             </p>

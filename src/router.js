@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import ProjectsIndex from './views/projects/ProjectsIndex.vue';
 import Index from './views/Index.vue';
-import SingleProject from './views/projects/SingleProject.vue';
+import ProjectShow from './views/projects/ProjectShow.vue';
+import NotFound from './views/NotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -20,8 +21,13 @@ const router = createRouter({
         {
             path: '/projects/:slug',
             name: 'show.project',
-            component: SingleProject
-        }
+            component: ProjectShow
+        },
+        {
+			path: '/:pathMatch(.*)*',
+			name: 'not-found',
+			component: NotFound,
+		},
     ]
 });
 

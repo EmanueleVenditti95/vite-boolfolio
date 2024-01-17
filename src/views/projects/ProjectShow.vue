@@ -7,15 +7,15 @@ export default {
             project:{},
         }
     },
-    props: {
-        slug: String
-    },  
     methods: {
         fetchProject() {
             axios.get(`http://127.0.0.1:8000/api/projects/${this.$route.params.slug}`)
             .then((response) => {
-                console.log(response);
-                this.project = response.data.results
+                this.project = response.data.results;
+            }).catch((error) => {
+                if(error.response.status === 404) {
+                this.$router.push({ name: 'not-found' });
+                }
             })
         }
     },
@@ -43,5 +43,9 @@ export default {
 <style lang="scss">
    .type {
         color: red;
+    }
+    .technologies {
+        margin: 10px 0;
+        font-style: italic;
     }
 </style>
