@@ -4,6 +4,7 @@ import ProjectsIndex from './views/projects/ProjectsIndex.vue';
 import Index from './views/Index.vue';
 import ProjectShow from './views/projects/ProjectShow.vue';
 import TypeIndex from './views/projects/types/TypeIndex.vue';
+import TypeShow from './views/projects/types/TypeShow.vue';
 import NotFound from './views/NotFound.vue';
 
 const router = createRouter({
@@ -28,6 +29,11 @@ const router = createRouter({
             path: '/types',
             name: 'types',
             component: TypeIndex
+        },
+        {
+            path: '/types/:name',
+            name: 'show.type',
+            component: TypeShow
         },
         {
             path: '/:pathMatch(.*)*',

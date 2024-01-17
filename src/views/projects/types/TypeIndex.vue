@@ -26,7 +26,7 @@ export default {
         <h1>Categorie :</h1>
         <ul>
             <li v-for="type in types">
-                {{ type.name }}
+                <router-link :to="{ name:'show.type', params: { name: type.name }}">{{ type.name }}</router-link>                
             </li>
         </ul>
     </div>
